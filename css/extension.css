@@ -1,0 +1,45 @@
+@font-face {
+    font-family: 'montserrat';
+    src: url('../fonts/Montserrat-Regular.ttf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url('../fonts/Montserrat-Bold.ttf');
+    font-weight: 700;
+}
+
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+    font-family: "montserrat", sans-serif;
+    font-weight: 700;
+    color: #fff;
+}
+
+span,
+p,
+ul,
+li,
+div{
+    font-family: "montserrat", sans-serif;
+    font-weight: 400;
+    color: #fff;
+}
+
+ul,
+li {
+    list-style-type: none;
+}
+
+li {
+    padding-left: 0;
+    margin-left: -44px;
+}
