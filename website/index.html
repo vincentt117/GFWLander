@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>GO FUCKING WORK</title>
+
+    <meta name="title" content="GO FUCKING WORK">
+    <meta name="description" content="Get some fucking work done. Stop being an unproductive little shit. Redirect fucking unproductive sites to motivational messages.">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="/favicon.png" />
+
+    <!--CSS -->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css?v=1.3">
+
+
+    <!--JS-->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="js/jquery.quickfit.js"></script>
+    
+
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row" id="message-container">
+            <h1 id="quote"></h1>
+            <img id="message-divider" src="./divider.png"/>
+            <p id="message-share">
+                <button href="#" class="message-share-button" id="twitter-share">Fucking <i class="fa fa-twitter"></i> it.</button>
+                <!--<button href="#" class="message-share-button" id="facebook-share">FUCK. <i class="fa fa-facebook"></i> IT.</button>-->
+            </p>
+        </div>
+    </div>
+    <p id="footer-credit">Made with fucking ♥ by <a href="http://alexanderlam.ca" target="_blank">Alexander Lam</a></p>
+    <a id="footer-survey" href="#" data-toggle="modal" data-target="#surveyModal">I NEED YOUR FUCKING OPINION!</a>
+    <a id="footer-chrome" href="https://chrome.google.com/webstore/detail/go-fucking-work/hibmkkpfegfiinilnlabbfnjcopdiiig" target="_blank">Get GO FUCKING WORK for Chrome</a>
+
+    <div id="surveyModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <iframe id="surveyTypeForm" src="https://mirroredlens.typeform.com/to/OfxhVu"></iframe>
+        </div>
+    </div>
+    
+    <script src="js/functions.js?v=1.0"></script>
+    <script>
+        $(function () {
+            getQuote(function (response) {
+                $("#quote").text(response);
+                $("#quote").quickfit({ max: 120, min: 50, truncate: false, tolerance: .1 });
+            });
+            
+            $("iframe").load(function () {
+                var frameContents;
+                frameContents = $("#surveyTypeForm").contents();
+                frameContents.find(".button .general .full .enabled").css("display", "none");
+            });
+            $('#surveyModal').on('shown.bs.modal', function () {
+                document.getElementById("surveyTypeForm").contentWindow.focus();
+            });
+        });
+
+
+
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-74648006-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+</body>
+
+
+</html>
