@@ -31,6 +31,32 @@ chrome.runtime.onInstalled.addListener(function (object) {
     chrome.runtime.openOptionsPage();
 });
 
+chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
+    var curUrl = tab.url;
+    //Allow Sharing
+    if (!/twitter\.com\/intent\/tweet/.test(curUrl) && !/facebook\.com\/sharer\/sharer\.php/.test(curUrl)) {
+        //Check to see if URL is blocked
+        isBlocked(curUrl, function (response) {
+            //Check to see if on break
+            if (response) {
+                getBlockTime(function (time) {
+                    if (time <= Date.now()) {
+                        isWhiteTimeNow(function (isBreak) {
+                            if (!isBreak) {
+                                console.log("FINAL: "+isBreak);
+                                chrome.tabs.update(tab.id, {
+                                    url: "https://www.gofuckingwork.com"
+                                });
+                            }
+                        });
+                    }
+                });
+            }
+        });
+    }
+
+});
+
 chrome.alarms.onAlarm.addListener(function (alarm) {
     getForceRefresh(function (refreshObj) {
         if (refreshObj == 1) {

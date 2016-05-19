@@ -8,7 +8,7 @@ function changeButton(buttonHide, buttonShow) {
 function pauseWork(time) {
     var curTime = Date.now();
     var blockTime = curTime + 60000 * time;
-    console.log(curTime+", "+blockTime);
+    console.log(curTime + ", " + blockTime);
     setBlockTime(blockTime, function () {
         changeButton("pauseButtons", "playButton");
         chrome.alarms.clearAll(function () {
@@ -26,7 +26,7 @@ function pauseWork(time) {
 
 function startWork() {
     setBlockTime(0, function () {
-        
+
         chrome.alarms.clearAll(function () {
             var resetTime = Date.now() + 5;
             chrome.alarms.create("pauseAlarm", {
@@ -98,13 +98,29 @@ function updatePauseView() {
             document.getElementById('noPauseButton').style.display = "none";
         } else {
             setBlockTime(0, function () {
-                    document.getElementById('pauseButton').style.display = "none";
-                    document.getElementById('noPauseButton').style.display = "block";
+                document.getElementById('pauseButton').style.display = "none";
+                document.getElementById('noPauseButton').style.display = "block";
             });
 
         }
     });
 }
+
+function updateBreakView() {
+    isWhiteTimeNow(function (isBreak) {
+        if (isBreak == true) {
+            setBlockTime(0, function () {
+                document.getElementById('breakButton').style.display = "block";
+                document.getElementById('noPauseButton').style.display = "none";
+                document.getElementById('pauseButton').style.display = "none";
+            });
+        } else {
+            document.getElementById('breakButton').style.display = "none";
+            updatePauseView();
+        }
+    });
+}
+
 
 document.getElementById('settingIcon').addEventListener('click', function () {
     chrome.runtime.openOptionsPage();
@@ -173,13 +189,24 @@ chrome.storage.onChanged.addListener(function (changes, namespace) {
     }
 });
 
-        // Standard Google Universal Analytics code
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga'); // Note: https protocol here
- 
+window.onload = function() {
+    updateBreakView();
+};
+
+// Standard Google Universal Analytics code
+(function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga'); // Note: https protocol here
+
 ga('create', 'UA-74648006-4', 'auto');
-ga('set', 'checkProtocolTask', function(){}); // Removes failing protocol check. @see: http://stackoverflow.com/a/22152353/1958200
+ga('set', 'checkProtocolTask', function () {}); // Removes failing protocol check. @see: http://stackoverflow.com/a/22152353/1958200
 ga('require', 'displayfeatures');
 ga('send', 'pageview', '/popup.html');

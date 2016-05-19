@@ -1,0 +1,54 @@
+/* weekLine dark css*/
+
+.weekDays a
+{
+    padding: 3px !important;
+    border: 5px solid white;
+    text-decoration: none;
+    background: #222;
+    color: #fff;
+    display: inline-block;
+    transition: background .25s ease-in-out;
+    -moz-transition: background .25s ease-in-out;
+    -webkit-transition: background .25s ease-in-out;
+    text-decoration: none !important;
+	font-family: "montserrat", !important;
+    width: 48px;
+    text-align: center;
+}
+
+.weekDays a:first-child:not(.selectedDay):not(:hover)
+{
+    padding: 3px !important;
+}
+
+.weekDays a:last-child:not(.selectedDay):not(:hover)
+{
+    padding: 3px !important;
+}
+
+.weekDays a:first-child:hover
+{
+	padding: 3px !important;
+}
+
+.weekDays a:first-child
+{
+	padding: 3px !important;
+}
+
+.weekDays a:hover
+{
+	background-color:#888;
+    color:#222;
+    padding: 3px !important;
+    border: 5px solid #888;
+}
+
+.weekDays .selectedDay
+{
+	background-color:#fff;
+    color:#222;
+    padding: 3px !important;
+    border: 5px solid #fff;
+}

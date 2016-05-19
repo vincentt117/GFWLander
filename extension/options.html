@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/extension.css">
     <link rel="stylesheet" type="text/css" href="css/options.css">
+    <link rel="stylesheet" type="text/css" href="css/cleanslate.css">
+    <link rel="stylesheet" type="text/css" href="css/wickedpicker.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.weekLine.css" />
     <script src="js/jquery-2.2.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 </head>
@@ -43,6 +46,42 @@
                 <ul class="inputOutputSection" id="blockedList"></ul>
             </div>
         </div>
+        <div class="row" id="breakSection">
+            <div class="col-md-4 text-centered">
+                <h1 id="title">TIMES THAT YOU'RE NOT FUCKING WORKING</h1>
+            </div>
+            <div class="col-md-4 text-centered" id="formSection">
+                <h2>ADD SOME NEW FUCKING TIMES</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>FROM</h3>
+                    <input type="text" name="fromTime" id="fromTime" class="timepicker" size="15">
+
+                    </div>
+                    <div class="col-md-6">
+                        <h3>TO</h3>
+                                <input type="text" name="toTime" id="toTime" class="timepicker" size="15">
+
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-md-12">
+                                    <h3>ON</h3>
+                <span id="weekSelector"></span>
+                    </div>
+                </div>
+               
+                <span><button id="saveTime">Add</button><div id="timeStatus" class="pull-right"></div></span>
+                
+
+            </div>
+            <div class="col-md-4 text-centered" id="formSection">
+                <div id="row">
+                <h2>YOUR FUCKING BREAK TIMES</h2>
+                <ul class="col-md-12" id="breakList"></ul>
+                </div>
+            </div>
+        </div>
 
         <div class="row" id="socialFooter">
             <div class="col-md-4 text-centered">
@@ -75,16 +114,18 @@
                     <h4 class="modal-title">I MADE SOME FUCKING UPDATES.</h4>
                 </div>
                 <div class="modal-body">
-                    <h5>v0.6 - May 10, 2016: Scheduling and Whitelisting</h5>
-                    <p>You asked for features. I listened to some of you. Introducing advanced features. Scroll to the bottom of the options and hit the big button. Can't miss it. What can you do?</p>
+                    <h5>v0.6 - May 16, 2016: Break Scheduling, Whitelisting &amp; more!</h5>
+                    <p>Drumroll please.. Round 2 of features have arrived! The most requested functionality is now available. What can you do?</p>
                     <ul>
-                        <ol>1. You can now force refresh pages when your break is up. No more exploiting that 'loophole.' Enable it in advanced settings.</ol>
-                        <ol>2. For the hardcore, pausing can be disabled. Only for the super productive among us. Enable it in advance settings.</ol>
+                        <ol>1. Schedule your break times! Disable GFW when you're not working so there aren't any nasty surprises. Add the times you need a break on the options page.</ol>
+                        <ol>2. Have exceptions that you want to allow? Add them to the whitelist. Find it in your advanced features. Special thanks to </ol>
+                        <ol>3. A lot of you reported that you couldn't go back to the blocked page after pausing. That's fixed now! Hit back to visit the last page GFW blocked (if you're paused or on break).</ol>
                     </ul>
-                    <p>More features coming soon. On the deck are whitelists and scheduled break times.</p>
-                    <p>Tweet any feature suggestions/feedback <a href="#" id="hiAlex">@hialexlam</a></p>
+                    <p>French and Russian versions coming soon. Please tweet me if you'd like to help translate GFW to your language!</p>
+                    <p>Tweet any feature suggestions/feedback <a href="#" id="hiAlex">@hialexlam</a>
+                    </p>
                     <p>-Alex</p>
-                    
+
                 </div>
                 <div class="modal-body">
                     <h5>v0.5 - March 21, 2016: Introducing Advanced Settings</h5>
@@ -94,9 +135,10 @@
                         <ol>2. For the hardcore, pausing can be disabled. Only for the super productive among us. Enable it in advance settings.</ol>
                     </ul>
                     <p>More features coming soon. On the deck are whitelists and scheduled break times.</p>
-                    <p>Tweet any feature suggestions/feedback <a href="#" id="hiAlex">@hialexlam</a></p>
+                    <p>Tweet any feature suggestions/feedback <a href="#" id="hiAlex">@hialexlam</a>
+                    </p>
                     <p>-Alex</p>
-                    
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -104,7 +146,8 @@
             </div>
         </div>
     </div>
-    
+    <script src="js/wickedpicker.js"></script>
+    <script src="js/jquery.weekline.min.js"></script>
     <script src="js/functions.js"></script>
     <script src="js/options.js"></script>
 
