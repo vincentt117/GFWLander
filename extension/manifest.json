@@ -1,14 +1,14 @@
 {
     "manifest_version": 2,
     "name": "Go Fucking Work",
-    "short_name":"Fucking Work",
+    "short_name": "Fucking Work",
     "description": "Get some fucking work done. Redirect fucking unproductive sites to motivational messages.",
     "version": "0.6",
     "options_page": "options.html",
     "browser_action": {
         "name": "Go Fucking Work",
         "default_icon": "img/favicon-96x96.png",
-        "default_title": "GO FUCKING WORK", 
+        "default_title": "GO FUCKING WORK",
         "default_popup": "popup.html"
     },
     "author": "Lamify",
@@ -19,18 +19,19 @@
         "128": "img/favicon-128x128.png"
     },
     "background": {
-        "scripts": ["js/jquery-2.2.1.min.js",
-                    "js/URI.js",
-                    "js/functions.js",
-                    "js/background.js"
-                   ]
+        "scripts": [
+            "js/jquery-2.2.1.min.js",
+            "js/URI.js",
+            "js/functions.js",
+            "js/background.js"
+        ]
     },
     "permissions": [
-          "storage",
-          "tabs",
-          "alarms"
-        ],
-  "content_security_policy": "script-src 'self' https://www.google-analytics.com; object-src 'self'",
+        "storage",
+        "tabs",
+        "alarms"
+    ],
+    "content_security_policy": "script-src 'self' https://www.google-analytics.com; object-src 'self'",
     "content_scripts": [
         {
             "matches": [
