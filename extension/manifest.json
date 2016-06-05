@@ -3,7 +3,7 @@
     "name": "Go Fucking Work",
     "short_name": "Fucking Work",
     "description": "Get some fucking work done. Redirect fucking unproductive sites to motivational messages.",
-    "version": "0.6",
+    "version": "1.0",
     "options_page": "options.html",
     "browser_action": {
         "name": "Go Fucking Work",

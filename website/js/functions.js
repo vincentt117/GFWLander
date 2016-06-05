@@ -6,11 +6,14 @@ function getQuote(callback) {
         var delay = 3;
         var response = quotes[Math.floor(Math.random() * (max - min + 1)) + min];
 
+        var locale = getParameterByName("lang", window.location.href);
 
-        //Check if refreshing. Tells you to GET BACK TO FUCKING WORK. Contributed by Giles Wells: MediaGearhead.com
-        if (typeof localStorage.getItem('lastLoad') == "string" && document.referrer.localeCompare("") == 0) {
-            if (parseInt(localStorage.getItem('lastLoad')) + delay > Math.floor(Date.now() / 1000)) {
-                response = "STOP FUCKING REFRESHING. WORK.";
+        if (locale == "en" || locale == "en_GB" || locale == "en_US" || !locale) {
+            //Check if refreshing. Tells you to GET BACK TO FUCKING WORK. Contributed by Giles Wells: MediaGearhead.com
+            if (typeof localStorage.getItem('lastLoad') == "string" && document.referrer.localeCompare("") == 0) {
+                if (parseInt(localStorage.getItem('lastLoad')) + delay > Math.floor(Date.now() / 1000)) {
+                    response = "STOP FUCKING REFRESHING. WORK.";
+                }
             }
         }
 
@@ -27,7 +30,7 @@ function getLocalizedQuoteList(callback) {
         if (!quoteList.language[locale]) {
             callback(quoteList.language.en);
         } else {
-            callback (quoteList.language[locale]);
+            callback(quoteList.language[locale]);
         }
 
     });

@@ -72,7 +72,7 @@ input {
 }
 
 #largeTitle {
-    margin-top: 50px;
+    margin-top: 80px;
     display: block;
     font-size: 50px;
 }
@@ -81,7 +81,10 @@ input {
     margin-top: 50px;
     display: block;
 }
-
+#socialFooter{
+ margin-top:80px;
+ margin-bottom:80px
+}
 #socialSection {
     margin-top: 50px;
     display: block;
@@ -91,7 +94,9 @@ input {
     margin-top: 100px;
     display: block;
 }
-
+#breakSection{
+    margin-top:80px
+}
 #breakOutput{
  margin-top:15px;   
 }
@@ -128,11 +133,16 @@ input:focus {
 }
 
 #fuckingSiteSection {
-    margin-top: 50px;
-    min-height: 350px;
+    margin-top: 80px;
+    min-height: 300px;
 }
 
-
+.section{
+ margin-top:80px;   
+}
+.section-end{
+ margin-bottom:80px;   
+}
 
 a,
 a:visited, a:link {
@@ -205,4 +215,34 @@ background-color:#fff;
     -webkit-animation-iteration-count: 0;
   animation-iteration-count: 0;
 
+}
+
+.mainNav, .mainNav:visited, .mainNav:link{
+    border:none;
+    margin-top:5px;
+}
+
+.mainNav.onPage, .mainNav:hover, .mainNav:active, .mainNav:focus{
+    border-bottom:5px solid white;
+    background-color:#fff;
+    color:#222;
+}
+
+#oldUpdates{
+ display:none;   
+}
+#expandUpdates{
+ display:block;
+ margin:15px;
+}
+
+#link{
+ background: none;
+    padding: 0px;
+    border: none;
+    border-bottom: 5px solid white;   
+}
+
+#link:hover, #link:active, #link:focus{
+ background:#fff;   
 }

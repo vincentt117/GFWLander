@@ -11,7 +11,7 @@ function pauseWork(time) {
     console.log(curTime + ", " + blockTime);
     setBlockTime(blockTime, function () {
         changeButton("pauseButtons", "playButton");
-        chrome.alarms.clearAll(function () {
+        chrome.alarms.clear("pauseAlarm", function () {
 
             chrome.alarms.create("pauseAlarm", {
                 when: blockTime

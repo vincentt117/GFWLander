@@ -107,6 +107,84 @@ String.prototype.isEmpty = function () {
     return (this.length === 0 || !this.trim());
 };
 
+function buildBreakAlarms() {
+
+    chrome.alarms.getAll(function (alarms) {
+
+        //Clear relevant alarms
+        for (var i = 0; i < alarms.length; i++) {
+            var alarmName = alarms[i].name;
+            if (alarmName != "pauseAlarm") {
+                chrome.alarms.clear(alarmName);
+            }
+        }
+
+        //Rebuild alarms
+        getWhiteTime(function (breakTimes) {
+            breakTimes.forEach(buildAlarm);
+            chrome.alarms.getAll(function (alarms) {
+                for (var i = 0; i < alarms.length; i++) {
+                    var alarmName = alarms[i].name;
+                    var alarmTime = alarms[i].scheduledTime;
+                    var alarmPeriod = alarms[i].periodInMinutes;
+                    console.log("Name: "+alarmName+" Time: "+alarmTime+" Period: "+alarmPeriod);
+                }
+            });
+        });
+
+    });
+}
+
+
+
+function buildAlarm(element, index, array) {
+    var endHours = element.endTime[0];
+    var endMinutes = element.endTime[1];
+    var weekDays = element.weekDays;
+    var date = new Date();
+    date.setSeconds(0);
+    var curWeekDay = date.getDay();
+    var curTimestamp = date.getTime();
+    // Hours part from the timestamp
+    var curHours = date.getHours();
+    // Minutes part from the timestamp
+    var curMinutes = date.getMinutes();
+    var curDayTimestamp = (curHours * 60 + curMinutes) * 60000;
+    var breakDayTimestamp = (endHours * 60 + endMinutes) * 60000;
+    var isWhiteTime = false;
+    for (var i = 0; i < weekDays.length; i++) {
+        if (weekDays[i] == 1) {
+            var weekDay = i;
+            var alarmName = "breakAlarm-" + weekDay + "-" + breakDayTimestamp;
+            var alarmTime;
+            if (weekDay == curWeekDay) {
+                if (breakDayTimestamp >= curDayTimestamp) {
+                    alarmTime = curTimestamp + breakDayTimestamp - curDayTimestamp;
+                    console.log("x1");
+                } else {
+                    alarmTime = curTimestamp + 604800000 + breakDayTimestamp - curDayTimestamp;
+                    console.log("x2");
+                }
+            } else if (weekDay > curWeekDay) {
+                alarmTime = curTimestamp + (weekDay - curWeekDay) * 86400000 + breakDayTimestamp - curDayTimestamp;
+                console.log("x3");
+            } else {
+                alarmTime = curTimestamp + (7 + (weekDay - curWeekDay)) * 86400000 + breakDayTimestamp - curDayTimestamp;
+                console.log("x4");
+            }
+            
+            //correct for 1 minute early
+            alarmTime = alarmTime + 60001;
+            
+            chrome.alarms.create(alarmName, {
+                when: alarmTime,
+                periodInMinutes: 10080
+            });
+        }
+    }
+
+
+}
 
 /**
  * Get the linkList data
@@ -349,12 +427,7 @@ function isWhiteTimeNow(callback) {
             var begDaystamp = begHours * 60 + begMinutes;
             var endDaystamp = endHours * 60 + endMinutes;
             var weekDays = whiteTime.weekDays;
-            
-            console.log("Today: "+curWeekDay+"Number at position: "+weekDays[curWeekDay]);
-            console.log("curDaystamp: "+curDaystamp+" begDayStamp: "+begDaystamp+" endDaystamp: "+endDaystamp);
-            console.log(curHours+" "+curMinutes);
-            console.log(begHours+" "+begMinutes);
-            console.log(endHours+" "+endMinutes);
+
             if (weekDays[curWeekDay] == 1) {
                 //Check if time is within boundaries
                 console.log("WeekDay Pass");

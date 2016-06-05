@@ -1,7 +1,12 @@
 function reloadTabs() {
     getLinkList(function (storageObj) {
-        var linkList = storageObj;
-        linkList.forEach(matchTab);
+        getForceRefresh(function (refreshObj) {
+            if (refreshObj == 1) {
+                var linkList = storageObj;
+                linkList.forEach(matchTab);
+            }
+        });
+
     });
 
 }
@@ -26,9 +31,14 @@ function reloadTab(element, index, array) {
     });
 }
 
-
-chrome.runtime.onInstalled.addListener(function (object) {
-    chrome.runtime.openOptionsPage();
+// Check whether new version is installed
+chrome.runtime.onInstalled.addListener(function(details){
+    if(details.reason == "install"){
+            chrome.runtime.openOptionsPage();
+    }
+});
+chrome.runtime.onStartup.addListener(function () {
+    buildBreakAlarms();
 });
 
 chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
@@ -43,9 +53,10 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
                     if (time <= Date.now()) {
                         isWhiteTimeNow(function (isBreak) {
                             if (!isBreak) {
-                                console.log("FINAL: "+isBreak);
+                                console.log("FINAL: " + isBreak);
+                                var locale = chrome.i18n.getUILanguage();
                                 chrome.tabs.update(tab.id, {
-                                    url: "https://www.gofuckingwork.com"
+                                    url: "https://www.gofuckingwork.com?lang=" + locale
                                 });
                             }
                         });
@@ -92,9 +103,15 @@ chrome.storage.onChanged.addListener(function (changes, namespace) {
     if (changes.linkList) {
         console.log("List Changed");
         getBlockTime(function (blockTime) {
-            if (blockTime == 0) {
-                reloadTabs();
-            }
+            getForceRefresh(function (refreshObj) {
+                if (refreshObj == 1) {
+                    if (blockTime == 0) {
+                        reloadTabs();
+                    }
+                }
+            });
+
+
         });
 
     }

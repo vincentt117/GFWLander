@@ -177,7 +177,7 @@ document.getElementById('saveSite').addEventListener('click', saveWhiteList);
 document.querySelector('#newSite').addEventListener('keypress', function (e) {
     var key = e.which || e.keyCode;
     if (key === 13) {
-        save_options();
+        saveWhiteList();
     }
 });
 

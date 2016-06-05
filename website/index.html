@@ -39,21 +39,27 @@
         </div>
     </div>
     <p id="footer-credit">Made with fucking ♥ by <a href="http://alexanderlam.ca" target="_blank">Alexander Lam</a></p>
-    <a id="footer-survey" href="#" data-toggle="modal" data-target="#surveyModal">I NEED YOUR FUCKING OPINION!</a>
+    <!--<a id="footer-survey" href="#" data-toggle="modal" data-target="#surveyModal">I NEED YOUR FUCKING OPINION!</a>-->
     <a id="footer-chrome" href="https://chrome.google.com/webstore/detail/go-fucking-work/hibmkkpfegfiinilnlabbfnjcopdiiig" target="_blank">Get GO FUCKING WORK for Chrome</a>
-
+<!--
     <div id="surveyModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <iframe id="surveyTypeForm" src="https://mirroredlens.typeform.com/to/OfxhVu"></iframe>
         </div>
     </div>
+-->
     
-    <script src="js/functions.js?v=1.0"></script>
+    <script src="js/functions.js?v=1.1"></script>
     <script>
         $(function () {
             getQuote(function (response) {
+                var locale = getParameterByName("lang", window.location.href);
                 $("#quote").text(response);
+                if (locale=="ru"){
+                $("#quote").quickfit({ max: 120, min: 40, truncate: false, tolerance: .25 });
+                }else{
                 $("#quote").quickfit({ max: 120, min: 50, truncate: false, tolerance: .1 });
+                }
             });
             
             $("iframe").load(function () {

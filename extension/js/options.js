@@ -80,12 +80,14 @@ function saveWhiteTime() {
         for (var i = 0; i < rawWeeks.length; i++) {
             weekDays[rawWeeks[i]] = 1;
         }
-        
-        console.log("BEG: "+begTime+"END: "+endTime+"WEEKDAYS: "+weekDays);
+
+        console.log("BEG: " + begTime + "END: " + endTime + "WEEKDAYS: " + weekDays);
 
         pushWhiteTime(begTime, endTime, weekDays, function () {
             var timeStatus = document.getElementById('timeStatus');
             timeStatus.textContent = 'Options saved.';
+            //Set Alarms
+            buildBreakAlarms()
             setTimeout(function () {
                 timeStatus.textContent = '';
             }, 750);
@@ -161,6 +163,8 @@ function removeBreak(event) {
             // Update status to let user know options were saved.
             var timeStatus = document.getElementById('timeStatus');
             timeStatus.textContent = 'Option removed.';
+            //Rebuild Breaks
+            buildBreakAlarms();
             setTimeout(function () {
                 timeStatus.textContent = '';
             }, 750);
@@ -192,9 +196,9 @@ function validateUrl(url, callback) {
 }
 
 function openShare(url) {
-    var newwindow = window.open(url, 'name', 'height=550,width=700');
+    var newWindow = window.open(url, 'name', 'height=550,width=700');
     if (window.focus) {
-        newwindow.focus()
+        newWindow.focus()
     }
     return false;
 }
@@ -211,6 +215,10 @@ document.getElementById('twitterShare').addEventListener('click', function () {
 document.getElementById('hiAlex').addEventListener('click', function () {
     openShare("https://twitter.com/home?status=%40hialexlam%20");
 });
+document.getElementById('expandUpdates').addEventListener('click', function () {
+    document.getElementById('expandUpdates').style.display = "none";
+    document.getElementById('oldUpdates').style.display = "block";
+});
 document.addEventListener('DOMContentLoaded', restoreOptions);
 document.getElementById('saveSite').addEventListener('click', saveLinkList);
 document.getElementById('saveTime').addEventListener('click', saveWhiteTime);
@@ -224,11 +232,11 @@ document.querySelector('#newSite').addEventListener('keypress', function (e) {
 
 
 $(document).ready(function () {
-            $('.timepicker').wickedpicker({
-                twentyFour: true
-            });
-            $("#weekSelector").weekLine();
-        });
+    $('.timepicker').wickedpicker({
+        twentyFour: true
+    });
+    $("#weekSelector").weekLine();
+});
 
 // Standard Google Universal Analytics code
 (function (i, s, o, g, r, a, m) {
