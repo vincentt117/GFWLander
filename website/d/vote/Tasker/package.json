@@ -1,0 +1,18 @@
+{
+  "name": "gfw-tweet-watcher",
+  "version": "0.0.0",
+  "description": "Watch GFW Tweets for Voting App",
+  "main": "server/app.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "start": "node server/app.js"
+  },
+  "private": true,
+  "dependencies": {
+    "cron": "^1.1.0",
+    "mysql": "^2.11.1",
+    "twit": "^2.2.4"
+  }
+}

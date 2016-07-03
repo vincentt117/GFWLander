@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>GO FUCKING WORK</title>
+
+    <meta name="title" content="GO FUCKING WORK">
+    <meta name="description" content="Get some fucking work done. Stop being an unproductive little shit. Redirect fucking unproductive sites to motivational messages.">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="/favicon.png" />
+
+    <!--CSS -->
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,700|Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css?v=1.6">
+
+
+    <!--JS-->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="js/jquery.quickfit.js"></script>
+
+</head>
+
+<body>
+    <div class="site-input">
+        <label for="test-line"  id="test-icon"><img src="https://d30y9cdsu7xlg0.cloudfront.net/png/189670-200.png" width=25></label><input type="text" id="test-line" name="test-line"/>
+    </div>
+    <div class="dropdown language-selector">
+        <a data-toggle="dropdown"><img src="lang-en.png" class="lang-flag" id="lang-en-icon" width=25/><img src="lang-fr.png" class="lang-flag" id="lang-fr-icon" width=25/><img src="lang-ru.png" class="lang-flag" id="lang-ru-icon" width=25/><img src="lang-uk.png" class="lang-flag" id="lang-uk-icon" width=25/><img src="lang-de.png" class="lang-flag" id="lang-de-icon" width=25/><img src="lang-es.png" class="lang-flag" id="lang-es-icon" width=25/>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-right">
+            <li>
+                <a href="#" id="lang-en"><img src="lang-en.png" width=25/> ENGLISH</a>
+            </li>
+            <li>
+                <a href="#" id="lang-fr"><img src="lang-fr.png" width=25/> FRANÇAIS</a>
+            </li>
+            <li>
+                <a href="#" id="lang-ru"><img src="lang-ru.png" width=25/> РУССКИЙ</a>
+            </li>
+            <li>
+                <a href="#" id="lang-uk"><img src="lang-uk.png" width=25/> УКРАЇНСЬКА</a>
+            </li>
+            <li>
+                <a href="#" id="lang-de"><img src="lang-de.png" width=25/> DEUTSCHE</a>
+            </li>
+            <li>
+                <a href="#" id="lang-es"><img src="lang-es.png" width=25/> ESPAÑOL</a>
+            </li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="row" id="message-container">
+            <h1 id="quote"></h1>
+        </div>
+    </div>
+    <p id="footer-credit">Made with fucking ♥ by <a href="http://alexanderlam.ca" target="_blank">Alexander Lam</a>
+    </p>
+    <a id="footer-survey" href="#" data-toggle="modal" data-target="#surveyModal">LAST CHANCE. WRITE FOR GO FUCKING WORK.</a>
+    <a id="footer-chrome" href="https://chrome.google.com/webstore/detail/go-fucking-work/hibmkkpfegfiinilnlabbfnjcopdiiig" target="_blank">START WORKING. GET GO FUCKING WORK FOR CHROME.</a>
+
+    <div style="position:absolute;top:100%;left:5%;">
+        <a href="https://heapanalytics.com/?utm_source=badge"><img style="width: 108px; height: 41px; display: none !important;" src="//heapanalytics.com/img/badgeLight.png" alt="Heap | Mobile and Web Analytics"></a>
+    </div>
+
+    <div id="surveyModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <iframe id="surveyTypeForm" src="https://mirroredlens.typeform.com/to/bAAiqP"></iframe>
+        </div>
+    </div>
+
+    <script src="js/functions.js?v=1.5"></script>
+    <script>
+        $(function () {
+            getQuote(function (response) {
+                var locale = getLang();
+                $("#quote").text(response);
+                if (locale == "ru" || locale == "uk") {
+                    $("#quote").quickfit({
+                        max: 120,
+                        min: 35,
+                        truncate: false,
+                        tolerance: .15
+                    });
+                } else {
+                    $("#quote").quickfit({
+                        max: 120,
+                        min: 50,
+                        truncate: false,
+                        tolerance: .1
+                    });
+                }
+            });
+            setLangDropdown();
+            $("iframe").load(function () {
+                var frameContents;
+                frameContents = $("#surveyTypeForm").contents();
+                frameContents.find(".button .general .full .enabled").css("display", "none");
+            });
+            $('#surveyModal').on('shown.bs.modal', function () {
+                document.getElementById("surveyTypeForm").contentWindow.focus();
+            });
+
+
+            $(document).keyup(function (e) {
+                    if ($('#test-line').is(':focus')) {
+                        $("#quote").text($('#test-line').val().toUpperCase());
+                        var locale = getLang();
+                        if (locale == "ru" || locale == "uk") {
+                            $("#quote").quickfit({
+                                max: 120,
+                                min: 35,
+                                truncate: false,
+                                tolerance: .15
+                            });
+                        } else {
+                            $("#quote").quickfit({
+                                max: 120,
+                                min: 50,
+                                truncate: false,
+                                tolerance: .1
+                            });
+                        }
+                    }
+                
+            });
+
+        });
+    </script>
+
+</body>
+
+
+</html>

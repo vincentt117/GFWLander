@@ -212,12 +212,21 @@ document.getElementById('facebookShare').addEventListener('click', function () {
 document.getElementById('twitterShare').addEventListener('click', function () {
     openShare("https://twitter.com/home?status=It's%20time%20to%20get%20stop%20fucking%20procrastinating.%20Go%20Fucking%20Work%3A%20https%3A//goo.gl/Yufdv3");
 });
-document.getElementById('hiAlex').addEventListener('click', function () {
+document.getElementById('hiAlex-2').addEventListener('click', function () {
+    openShare("https://twitter.com/home?status=%40hialexlam%20");
+});
+document.getElementById('hiAlex-1').addEventListener('click', function () {
     openShare("https://twitter.com/home?status=%40hialexlam%20");
 });
 document.getElementById('expandUpdates').addEventListener('click', function () {
     document.getElementById('expandUpdates').style.display = "none";
+    document.getElementById('hideUpdates').style.display = "block";
     document.getElementById('oldUpdates').style.display = "block";
+});
+document.getElementById('hideUpdates').addEventListener('click', function () {
+    document.getElementById('expandUpdates').style.display = "block";
+    document.getElementById('hideUpdates').style.display = "none";
+    document.getElementById('oldUpdates').style.display = "none";
 });
 document.addEventListener('DOMContentLoaded', restoreOptions);
 document.getElementById('saveSite').addEventListener('click', saveLinkList);

@@ -57,7 +57,20 @@ function isBlacklistedDomain(input, callback) {
         var inputURI = new URI(fixProtocol(input));
         callback(blacklist.some(function (blacklist_item) {
             var blackDomain = new URI(fixProtocol(blacklist_item)).domain();
-            return (blackDomain === inputURI.domain());
+            var blackSubDomain = new URI(fixProtocol(blacklist_item)).subdomain();
+            var inputSubDomain = inputURI.subdomain();
+
+            if (blackSubDomain.isEmpty() || blackSubDomain == "www") {
+                return (blackDomain === inputURI.domain());
+            } else {
+                var subMatch = false;
+                if (blackSubDomain + inputSubDomain == "www") {
+                    subMatch = true;
+                } else if (blackSubDomain == inputSubDomain) {
+                    subMatch = true;
+                }
+                return (blackDomain === inputURI.domain() && subMatch);
+            }
         }));
 
     });
@@ -127,7 +140,7 @@ function buildBreakAlarms() {
                     var alarmName = alarms[i].name;
                     var alarmTime = alarms[i].scheduledTime;
                     var alarmPeriod = alarms[i].periodInMinutes;
-                    console.log("Name: "+alarmName+" Time: "+alarmTime+" Period: "+alarmPeriod);
+                    console.log("Name: " + alarmName + " Time: " + alarmTime + " Period: " + alarmPeriod);
                 }
             });
         });
@@ -172,10 +185,10 @@ function buildAlarm(element, index, array) {
                 alarmTime = curTimestamp + (7 + (weekDay - curWeekDay)) * 86400000 + breakDayTimestamp - curDayTimestamp;
                 console.log("x4");
             }
-            
+
             //correct for 1 minute early
             alarmTime = alarmTime + 60001;
-            
+
             chrome.alarms.create(alarmName, {
                 when: alarmTime,
                 periodInMinutes: 10080

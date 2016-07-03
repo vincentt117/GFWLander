@@ -1,0 +1,72 @@
+{
+    "language": {
+        "en": [
+            "GO FUCKING WORK.",
+            "FUCK YOU. WORK.",
+            "TICK TOCK. FUCKING WORK.",
+            "YOU'RE DYING SOON. WORK.",
+            "REMEMBER WORK? FUCKING DO IT.",
+            "WORK YOU FUCKING FAILURE.",
+            "FUCKING WORK. NOW.",
+            "WHAT THE FUCK? GO WORK.",
+            "WORK YOU FUCKITY FUCK.",
+            "YOU LOSER. FUCKING WORK."
+        ],
+        "fr": [
+            "VA TRAVAILLER BORDEL.", 
+            "VA TE FAIRE FOUTRE. TRAVAILLE.", 
+            "TIC TAC. AU BOULOT BORDEL.", 
+            "TU VAS MOURIR BIENTÔT. TRAVAILLE.",
+            "TU TE SOUVIENS DU TRAVAIL ? FAIS LE BORDEL.",
+            "BOSSES ESPÈCE D’INCAPABLE.",
+            "TRAVAILLE BORDEL. MAINTENANT.",
+            "TU DÉCONNES OU QUOI ? VA TRAVAILLER.",
+            "TRAVAILLE TOI, PUTAIN DE FAINÉANT.",
+            "LOSER, RETOURNE TRAVAILLER."
+        ],
+        "ru":[
+            "ЧАСИКИ ТИКАЮТ. ИДИ РАБОТАЙ БЛЯДЬ.",
+            "ОХУЕТЬ МОЖНО. ДАВАЙ ИДИ РАБОТАЙ!",
+            "РАБОТА НЕ ЖДЕТ. ИДИ, БЛЯТЬ, РАБОТАЙ.",
+            "ТЫ ВСЕ РАВНО КОГДА-НИБУДЬ УМРЕШЬ. ИДИ РАБОТАЙ.",
+            "НЕ БУДЬ ЛУЗЕРОМ. ИДИ РАБОТАЙ.",
+            "КТО НЕ РАБОТАЕТ, ТОТ НЕ ЕСТ НИХУЯ.",
+            "ХВАТИТ ПРОЁБЫВАТЬ ЖИЗНЬ. ИДИ РАБОТАЙ.",
+            "СДЕЛАЙ ХОТЬ ЧТО-ТО ПОЛЕЗНОЕ. ИДИ, БЛЯТЬ, ПОРАБОТАЙ."         
+        ],
+         "uk":[
+            "ЧАСИКИ ТИКАЮТ. ИДИ РАБОТАЙ БЛЯТЬ.",
+            "ОХУЕТЬ МОЖНО. ДАВАЙ ИДИ РАБОТАЙ!",
+            "РАБОТА НЕ ЖДЕТ. ИДИ, БЛЯТЬ, РАБОТАЙ.",
+            "ТЫ ВСЕ РАВНО КОГДА-НИБУДЬ УМРЕШЬ. ИДИ РАБОТАЙ.",
+            "НЕ БУДЬ ЛУЗЕРОМ. ИДИ РАБОТАЙ.",
+            "КТО НЕ РАБОТАЕТ, ТОТ НЕ ЕСТ НИХУЯ.",
+            "ХВАТИТ ПРОЁБЫВАТЬ ЖИЗНЬ. ИДИ РАБОТАЙ.",
+            "СДЕЛАЙ ХОТЬ ЧТО-ТО ПОЛЕЗНОЕ. ИДИ, БЛЯТЬ, ПОРАБОТАЙ."         
+        ],
+        "de":[
+            "VERDAMMT, ARBEITE.",
+            "FICK DICH. ARBEITE.",
+            "SCHEISSE. GEH ARBEITEN.",
+            "DU STIRBST EH BALD. ALSO ARBEITE.",
+            "SAGT DIR ARBEIT WAS? SCHEISSE.",
+            "ARBEITE WAS, DU WICHSER.",
+            "FUCK, GEH ARBEITEN. JETZT. SOFORT.",
+            "WAS ZUM TEUFEL? ARBEITE.",
+            "ARBEITE, HURENKIND.",
+            "VERDAMMTER VERLIERER. ARBEITE."
+        ],
+         "es":[
+            "VE A TRABAJAR, MALDITA SEA.",
+             "COME MIERDA. TRABAJA.",
+             "EL TIEMPO PASA. TRABAJA, JODER.",
+             "TE VAS A MORIR PRONTO. TRABAJA.",
+             "TRABAJO, ¿TE ACUERDAS? HAZLO, JODER.",
+             "TRABAJA MALDITO PERDEDOR.",
+             "TRABAJA MALDITA SEA. AHORA.",
+             "¿QUE PUTAS? VE A TRABAJAR.",
+             "TRABAJA PEQUEÑO MIERDA.",
+             "PERDEDOR. TRABAJA, MALDITA SEA."
+        ]
+    }
+}

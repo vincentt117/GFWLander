@@ -1,0 +1,247 @@
+[{
+    "created_at": "Thu Mar 03 02:15:51 +0000 2016",
+    "id": 705215077289467900,
+    "id_str": "705215077289467904",
+    "text": "Instead of working, I built a blocker to shout at me for procrastinating: Go Fucking Work https://t.co/a4t4iecfEJ https://t.co/iUGRyG3OaZ",
+    "truncated": false,
+    "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "user_mentions": [],
+        "urls": [{
+            "url": "https://t.co/a4t4iecfEJ",
+            "expanded_url": "https://goo.gl/EIYytN",
+            "display_url": "goo.gl/EIYytN",
+            "indices": [90, 113]
+        }],
+        "media": [{
+            "id": 705215076438052900,
+            "id_str": "705215076438052864",
+            "indices": [114, 137],
+            "media_url": "http://pbs.twimg.com/media/CcltYClXEAAnZSq.jpg",
+            "media_url_https": "https://pbs.twimg.com/media/CcltYClXEAAnZSq.jpg",
+            "url": "https://t.co/iUGRyG3OaZ",
+            "display_url": "pic.twitter.com/iUGRyG3OaZ",
+            "expanded_url": "http://twitter.com/hialexlam/status/705215077289467904/photo/1",
+            "type": "photo",
+            "sizes": {
+                "large": {
+                    "w": 1024,
+                    "h": 640,
+                    "resize": "fit"
+                },
+                "small": {
+                    "w": 340,
+                    "h": 213,
+                    "resize": "fit"
+                },
+                "thumb": {
+                    "w": 150,
+                    "h": 150,
+                    "resize": "crop"
+                },
+                "medium": {
+                    "w": 600,
+                    "h": 375,
+                    "resize": "fit"
+                }
+            }
+        }]
+    },
+    "extended_entities": {
+        "media": [{
+            "id": 705215076438052900,
+            "id_str": "705215076438052864",
+            "indices": [114, 137],
+            "media_url": "http://pbs.twimg.com/media/CcltYClXEAAnZSq.jpg",
+            "media_url_https": "https://pbs.twimg.com/media/CcltYClXEAAnZSq.jpg",
+            "url": "https://t.co/iUGRyG3OaZ",
+            "display_url": "pic.twitter.com/iUGRyG3OaZ",
+            "expanded_url": "http://twitter.com/hialexlam/status/705215077289467904/photo/1",
+            "type": "photo",
+            "sizes": {
+                "large": {
+                    "w": 1024,
+                    "h": 640,
+                    "resize": "fit"
+                },
+                "small": {
+                    "w": 340,
+                    "h": 213,
+                    "resize": "fit"
+                },
+                "thumb": {
+                    "w": 150,
+                    "h": 150,
+                    "resize": "crop"
+                },
+                "medium": {
+                    "w": 600,
+                    "h": 375,
+                    "resize": "fit"
+                }
+            }
+        }]
+    },
+    "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "in_reply_to_screen_name": null,
+    "user": {
+        "id": 22854837,
+        "id_str": "22854837",
+        "name": "Alex Lam",
+        "screen_name": "hialexlam",
+        "location": "Toronto, Canada",
+        "description": "Co-founder & Ex-CTO @ScentTrunk. Former @TrendHunter & @QueensU grad. I've got 5 minutes, let's connect me@alexanderlam.ca.",
+        "url": "http://t.co/YRgzB4F7cw",
+        "entities": {
+            "url": {
+                "urls": [{
+                    "url": "http://t.co/YRgzB4F7cw",
+                    "expanded_url": "http://www.alexanderlam.ca",
+                    "display_url": "alexanderlam.ca",
+                    "indices": [0, 22]
+                }]
+            },
+            "description": {
+                "urls": []
+            }
+        },
+        "protected": false,
+        "followers_count": 1070,
+        "friends_count": 719,
+        "listed_count": 20,
+        "created_at": "Thu Mar 05 00:42:31 +0000 2009",
+        "favourites_count": 759,
+        "utc_offset": -18000,
+        "time_zone": "Quito",
+        "geo_enabled": false,
+        "verified": false,
+        "statuses_count": 386,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "is_translation_enabled": false,
+        "profile_background_color": "C0DEED",
+        "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/378800000150907731/6sFPveiQ.png",
+        "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/378800000150907731/6sFPveiQ.png",
+        "profile_background_tile": true,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/640201465718411264/KdUcfM4v_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/640201465718411264/KdUcfM4v_normal.jpg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/22854837/1461800874",
+        "profile_link_color": "19CF86",
+        "profile_sidebar_border_color": "000000",
+        "profile_sidebar_fill_color": "DDEEF6",
+        "profile_text_color": "333333",
+        "profile_use_background_image": true,
+        "has_extended_profile": false,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "is_quote_status": false,
+    "retweet_count": 25,
+    "favorite_count": 78,
+    "favorited": false,
+    "retweeted": false,
+    "possibly_sensitive": false,
+    "lang": "en"
+}, {
+    "created_at": "Wed May 18 19:12:03 +0000 2016",
+    "id": 733012289796857900,
+    "id_str": "733012289796857857",
+    "text": "Is A/B Testing Really A Good Idea For SaaS Startups?\n\nhttps://t.co/sCGd7aZCnM",
+    "truncated": false,
+    "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "user_mentions": [],
+        "urls": [{
+            "url": "https://t.co/sCGd7aZCnM",
+            "expanded_url": "http://buff.ly/1qoRZFJ",
+            "display_url": "buff.ly/1qoRZFJ",
+            "indices": [54, 77]
+        }]
+    },
+    "source": "<a href=\"http://bufferapp.com\" rel=\"nofollow\">Buffer</a>",
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "in_reply_to_screen_name": null,
+    "user": {
+        "id": 22854837,
+        "id_str": "22854837",
+        "name": "Alex Lam",
+        "screen_name": "hialexlam",
+        "location": "Toronto, Canada",
+        "description": "Co-founder & Ex-CTO @ScentTrunk. Former @TrendHunter & @QueensU grad. I've got 5 minutes, let's connect me@alexanderlam.ca.",
+        "url": "http://t.co/YRgzB4F7cw",
+        "entities": {
+            "url": {
+                "urls": [{
+                    "url": "http://t.co/YRgzB4F7cw",
+                    "expanded_url": "http://www.alexanderlam.ca",
+                    "display_url": "alexanderlam.ca",
+                    "indices": [0, 22]
+                }]
+            },
+            "description": {
+                "urls": []
+            }
+        },
+        "protected": false,
+        "followers_count": 1070,
+        "friends_count": 719,
+        "listed_count": 20,
+        "created_at": "Thu Mar 05 00:42:31 +0000 2009",
+        "favourites_count": 759,
+        "utc_offset": -18000,
+        "time_zone": "Quito",
+        "geo_enabled": false,
+        "verified": false,
+        "statuses_count": 386,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "is_translation_enabled": false,
+        "profile_background_color": "C0DEED",
+        "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/378800000150907731/6sFPveiQ.png",
+        "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/378800000150907731/6sFPveiQ.png",
+        "profile_background_tile": true,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/640201465718411264/KdUcfM4v_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/640201465718411264/KdUcfM4v_normal.jpg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/22854837/1461800874",
+        "profile_link_color": "19CF86",
+        "profile_sidebar_border_color": "000000",
+        "profile_sidebar_fill_color": "DDEEF6",
+        "profile_text_color": "333333",
+        "profile_use_background_image": true,
+        "has_extended_profile": false,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "is_quote_status": false,
+    "retweet_count": 1,
+    "favorite_count": 3,
+    "favorited": false,
+    "retweeted": false,
+    "possibly_sensitive": false,
+    "lang": "en"
+}]

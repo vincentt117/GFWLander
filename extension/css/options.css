@@ -235,6 +235,10 @@ background-color:#fff;
  display:block;
  margin:15px;
 }
+#hideUpdates{
+ display:none;
+ margin:15px;
+}
 
 #link{
  background: none;

@@ -3,7 +3,7 @@
     "name": "Go Fucking Work",
     "short_name": "Fucking Work",
     "description": "Get some fucking work done. Redirect fucking unproductive sites to motivational messages.",
-    "version": "1.0",
+    "version": "1.1",
     "options_page": "options.html",
     "browser_action": {
         "name": "Go Fucking Work",
@@ -31,7 +31,7 @@
         "tabs",
         "alarms"
     ],
-    "content_security_policy": "script-src 'self' https://www.google-analytics.com; object-src 'self'",
+    "content_security_policy": "script-src 'self' https://www.google-analytics.com/ https://cdn.heapanalytics.com/; object-src 'self'",
     "content_scripts": [
         {
             "matches": [

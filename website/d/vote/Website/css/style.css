@@ -1,0 +1,134 @@
+body{
+    background-color:#2e2e2e;
+}
+
+h1,h2,h3,h4,h5,h6,p,a,span{
+    color:#fff;
+    font-family: montserrat, sans-serif;
+    font-weight:700;
+}
+a,
+a:visited {
+    color: #FFF;
+    text-decoration: none;
+}
+
+a:hover,
+a:active,
+a:focus {
+    color: #FFF;
+}
+#title{
+    color:#fff;
+    text-align:center;
+    margin-top:60px;
+    font-size:68px;
+}
+#subtitle{
+    color:#fff;
+    text-align:center;
+    margin-bottom:30px;
+    font-weight:400;
+}
+.vote-body{
+    background-color:#222;
+    padding:15px;
+    color:#fff;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+    max-width:700px;
+    margin: 0 auto;
+    transition: box-shadow .25s;
+    border-radius: 5px;
+    margin-top:15px;
+
+}
+.vote-button{
+    font-size:28px;
+    margin-top:28px;
+    display:block;
+    text-align:right;
+    margin-left:-10px;
+    text-decoration:none;
+    cursor: pointer;
+}
+.vote-button:hover, .vote-button:focus{
+    color:#888;
+    text-decoration:none;
+}
+
+.voted, .voted:focus{
+    color:#444;
+}
+
+.credits{
+ margin-bottom: 0px;
+    padding-bottom: 0px;
+    float: right;   
+}
+@keyframes flickerAnimation {
+  0%   { opacity:1; }
+  50%  { opacity:0.3; }
+  100% { opacity:1; }
+}
+@-o-keyframes flickerAnimation{
+  0%   { opacity:1; }
+  50%  { opacity:0.3; }
+  100% { opacity:1; }
+}
+@-moz-keyframes flickerAnimation{
+  0%   { opacity:1; }
+  50%  { opacity:0.3; }
+  100% { opacity:1; }
+}
+@-webkit-keyframes flickerAnimation{
+  0%   { opacity:1; }
+  50%  { opacity:0.3; }
+  100% { opacity:1; }
+}
+.animate-flicker {
+   -webkit-animation: flickerAnimation 2s infinite;
+   -moz-animation: flickerAnimation 2s infinite;
+   -o-animation: flickerAnimation 2s infinite;
+    animation: flickerAnimation 2s infinite;
+}
+
+.vote-count{
+    max-width:50px;
+    text-align:center;
+}
+
+.vote-count-wrapper{
+    padding-left:0px;
+    margin: 0 auto;
+    text-align:center;
+}
+
+.vote-count-num{
+    margin-bottom:0px;
+    padding-bottom:0px;
+}
+
+.vote-wrapper{
+    margin: 0 auto;
+    max-width: 620px;
+    margin-top:10px;
+    margin-bottom:20px;
+    
+}
+
+.vote-left-wrapper{
+    margin-top:15px;
+}
+
+button{
+    background-color:#222;
+    border:3px solid #fff;
+    padding-left:5px;
+    padding-right:5px;
+    margin-right:5px;
+}
+
+button:hover{
+    background-color:#fff;
+    color:#222;
+}
