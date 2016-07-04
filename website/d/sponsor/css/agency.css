@@ -22,12 +22,14 @@ body {
 }
 
 p {
-    font-size: 14px;
+    font-size: 18px;
     line-height: 1.7;
+    margin-bottom:15px;
+    margin-top:15px;
 }
 
 p.large {
-    font-size: 16px;
+    font-size: 24px;
 }
 
 a,
@@ -58,6 +60,8 @@ h6 {
     font-family: "montserrat";
     text-transform: uppercase;
     font-weight: 700;
+    margin-bottom:5px;
+    margin-top:5px;
 }
 
 .img-centered {
@@ -131,13 +135,9 @@ fieldset[disabled] .btn-primary.active {
     border-radius: 3px;
     font-size: 18px;
     padding: 20px 40px;
-    margin-left: -40px;
-    margin-left: -60px;
 }
 .btn-xl-bottom {
     color: #fff;
-    position: absolute;
-    left: 800px;
     background-color: #E62D2B;
     border-color: #E62D2B;
     font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -146,8 +146,15 @@ fieldset[disabled] .btn-primary.active {
     border-radius: 3px;
     font-size: 18px;
     padding: 20px 40px;
-    margin-left: -40px;
-    margin-left: -60px;
+
+}
+
+.btn-centered{
+    margin: 0 auto;
+}
+
+.btn-promo{
+    width:100%;
 }
 
 .btn-xl:hover,
@@ -313,11 +320,13 @@ header .intro-text .intro-lead-in {
     margin-bottom: 25px
 }
 
-header .intro-text .intro-paragraph {
+.intro-paragraph {
     font-family: "montserrat";
-    font-size: 45px;
+    font-size: 25px;
     line-height: 45px;
     margin-bottom: 25px;
+    text-align:left;
+    float:right;
 }
 
 header .intro-text .intro-heading {
@@ -939,4 +948,15 @@ body {
 .image-contain-text{
     position: relative;
     width: 100%;
+}
+
+.promo-text{
+    text-align:left;
+    margin-bottom:30px;
+}
+.promo-block{
+    text-align:left;
+}
+.promo-image{
+    margin-bottom:50px;
 }
